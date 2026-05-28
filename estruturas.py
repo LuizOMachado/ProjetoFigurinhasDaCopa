@@ -24,7 +24,7 @@ class Album:
             
         self._tamanho += 1
 
-     def buscar(self, id_figurinha: int) -> Figurinha:
+    def buscar(self, id_figurinha: int) -> Figurinha:
         """Busca uma figurinha pelo ID. Retorna a Figurinha ou None se não achar"""
         atual = self._cabeca
         
@@ -35,6 +35,7 @@ class Album:
             atual = atual.proximo
             
         return None
+
     def remover(self, id_figurinha: int) -> bool:
         """Remove uma figurinha pelo ID manipulando os ponteiros"""
         atual = self._cabeca
@@ -59,7 +60,7 @@ class Album:
             
         return False # Retorna False se percorreu tudo e não achou a figurinha
 
-   def exibir_album(self):
+    def exibir_album(self):
         """Método extra para imprimir o álbum completo no terminal"""
         atual = self._cabeca
         if atual is None:
@@ -69,5 +70,3 @@ class Album:
         while atual is not None:
             print(atual.figurinha)
             atual = atual.proximo
-
-
