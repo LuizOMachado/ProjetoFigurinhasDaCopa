@@ -24,4 +24,16 @@ def adicionar(self, figurinha: Figurinha):
             
         self._tamanho += 1
 
+def buscar(self, id_figurinha: int) -> Figurinha:
+        """Busca uma figurinha pelo ID. Retorna a Figurinha ou None se não achar"""
+        atual = self._cabeca
+        
+        while atual is not None:
+            if atual.figurinha.id == id_figurinha:
+                return atual.figurinha
+            # Pula para o próximo nó
+            atual = atual.proximo
+            
+        return None
+
 
