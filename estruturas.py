@@ -7,7 +7,7 @@ class Album:
         self._cabeca = None  
         self._tamanho = 0
         
-def adicionar(self, figurinha: Figurinha):
+    def adicionar(self, figurinha: Figurinha):
         """Adiciona uma nova figurinha ao final do álbum"""
         novo_nodo = NodoLista(figurinha)
         
@@ -24,7 +24,7 @@ def adicionar(self, figurinha: Figurinha):
             
         self._tamanho += 1
 
-def buscar(self, id_figurinha: int) -> Figurinha:
+     def buscar(self, id_figurinha: int) -> Figurinha:
         """Busca uma figurinha pelo ID. Retorna a Figurinha ou None se não achar"""
         atual = self._cabeca
         
@@ -35,5 +35,28 @@ def buscar(self, id_figurinha: int) -> Figurinha:
             atual = atual.proximo
             
         return None
+    def remover(self, id_figurinha: int) -> bool:
+        """Remove uma figurinha pelo ID manipulando os ponteiros"""
+        atual = self._cabeca
+        anterior = None
+        
+        while atual is not None:
+            if atual.figurinha.id == id_figurinha:
+                # Caso 1: A figurinha a ser removida é a primeira da lista (cabeça)
+                if anterior is None:
+                    self._cabeca = atual.proximo
+                # Caso 2: A figurinha está no meio ou no final da lista
+                else:
+                    # A "seta" do nó anterior pula o nó atual e aponta para o próximo
+                    anterior.proximo = atual.proximo
+                    
+                self._tamanho -= 1
+                return True # Retorna True indicando que foi removido com sucesso
+                
+            # Se não achou ainda, avança os dois ponteiros
+            anterior = atual
+            atual = atual.proximo
+            
+        return False # Retorna False se percorreu tudo e não achou a figurinha
 
 
