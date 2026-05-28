@@ -59,4 +59,15 @@ class Album:
             
         return False # Retorna False se percorreu tudo e não achou a figurinha
 
+   def exibir_album(self):
+        """Método extra para imprimir o álbum completo no terminal"""
+        atual = self._cabeca
+        if atual is None:
+            print("O álbum está vazio.")
+            return
+            
+        while atual is not None:
+            print(atual.figurinha)
+            atual = atual.proximo
+
 
