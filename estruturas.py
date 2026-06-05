@@ -1,4 +1,4 @@
-from modelos import NodoLista, Figurinha
+from modelos import NodoLista, NodoFila, Figurinha 
 
 class Album:
     """Implementação do Álbum usando Lista Encadeada Simples."""
@@ -109,16 +109,14 @@ class Fila:
             
         return figurinha_removida
 
-     def peek(self) -> Figurinha:
+    def peek(self) -> Figurinha:
         """Retorna a figurinha do início da fila sem removê-la."""
         if self._inicio is None:
             return None
         return self._inicio.figurinha
         
-     def limpar(self):
+    def limpar(self):
         """Esvazia completamente a fila."""
         # Ao remover as referências, o Python limpa os nós da memória automaticamente
         self._inicio = None
         self._fim = None
-
-
