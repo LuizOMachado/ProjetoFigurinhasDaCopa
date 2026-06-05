@@ -70,3 +70,27 @@ class Album:
         while atual is not None:
             print(atual.figurinha)
             atual = atual.proximo
+
+class Fila:
+    """Implementação de uma Fila FIFO (First-In, First-Out) com nós encadeados."""
+    
+    def __init__(self):
+        self._inicio = None  # Aponta para o primeiro elemento (quem sai primeiro)
+        self._fim = None     # Aponta para o último elemento (quem chegou por último)
+        
+    def enqueue(self, figurinha: Figurinha):
+        """Adiciona uma figurinha no final da fila (fim)."""
+        novo_nodo = NodoFila(figurinha)
+        
+        # Se a fila estiver vazia, o início e o fim apontam para o mesmo nó
+        if self._fim is None:
+            self._inicio = novo_nodo
+            self._fim = novo_nodo
+            return
+            
+        # Caso contrário, o 'proximo' do último nó atual aponta para o novo nó,
+        # e então atualizamos a referência '_fim' para este novo nó.
+        self._fim.proximo = novo_nodo
+        self._fim = novo_nodo
+
+
