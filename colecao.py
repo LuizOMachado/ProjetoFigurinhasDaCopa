@@ -7,3 +7,15 @@ class Colecao:
     def __init__(self):
         self.album_principal = Album() # Onde ficam as figurinhas coladas
         self.repetidas = Album()       # Onde ficam as repetidas
+
+    def receber_pacotinho(self, figurinha: Figurinha):
+        """Verifica se já tem no álbum. Se tiver, manda para as repetidas."""
+        ja_possui = self.album_principal.buscar(figurinha.id)
+        
+        if ja_possui is not None:
+            print(f"Ops! A figurinha [{figurinha.id}] {figurinha.nome} é repetida.")
+            self.repetidas.adicionar(figurinha) # Vai para a lista de repetidas 
+        else:
+            print(f"Inédita! Colando [{figurinha.id}] {figurinha.nome} no álbum oficial.")
+            self.album_principal.adicionar(figurinha)
+
