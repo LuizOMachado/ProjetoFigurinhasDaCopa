@@ -14,16 +14,18 @@ class Colecao:
         
         if ja_possui is not None:
             print(f"Ops! A figurinha [{figurinha.id}] {figurinha.nome} é repetida.")
-            self.repetidas.adicionar(figurinha) # Vai para a lista de repetidas 
+            self.repetidas.adicionar(figurinha) # Vai para a lista de repetidas
         else:
             print(f"Inédita! Colando [{figurinha.id}] {figurinha.nome} no álbum oficial.")
             self.album_principal.adicionar(figurinha)
 
     def exibir_status_repetidas(self):
-        print(f"\n--- Suas Repetidas (Quantidade: {self.repetidas._tamanho}) ---") [cite: 45]
-        self.repetidas.exibir_album() [cite: 44]
+        """Mostra a lista de repetidas e conta a quantidade."""
+        print(f"\n--- Suas Repetidas (Quantidade: {self.repetidas._tamanho}) ---")
+        self.repetidas.exibir_album()
 
     def buscar_por_jogador(self, nome_jogador: str):
+        """Percorre a lista encadeada buscando por nome do jogador."""
         print(f"\nBuscando jogador: '{nome_jogador}'...")
         atual = self.album_principal._cabeca
         encontrou = False
@@ -53,6 +55,3 @@ class Colecao:
             
         if not encontrou:
             print("Nenhuma figurinha dessa seleção foi encontrada.")
-
-
-
