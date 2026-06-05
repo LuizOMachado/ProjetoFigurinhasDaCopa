@@ -38,5 +38,21 @@ class Colecao:
         if not encontrou:
             print("Jogador não encontrado no álbum principal.")
 
+    def buscar_por_selecao(self, pais: str):
+        """Percorre a lista encadeada buscando por seleção."""
+        print(f"\nBuscando seleção: '{pais}'...")
+        atual = self.album_principal._cabeca
+        encontrou = False
+        
+        # Viaja nó por nó verificando o país
+        while atual is not None:
+            if atual.figurinha.pais.lower() == pais.lower():
+                print(atual.figurinha)
+                encontrou = True
+            atual = atual.proximo
+            
+        if not encontrou:
+            print("Nenhuma figurinha dessa seleção foi encontrada.")
+
 
 
