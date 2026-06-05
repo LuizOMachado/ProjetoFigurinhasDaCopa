@@ -18,13 +18,13 @@ def exibir_menu():
 def main():
     # Instanciando o sistema
     minha_colecao = Colecao()
-    amigo_colecao = Colecao() # Criamos um "usuário 2" fantasma para podermos testar as trocas
+    amigo_colecao = Colecao()
     hist_trocas = Historico()
     
-    # Carregando dados salvos do CSV (se existirem)
+    # Carregando dados salvos do CSV
     print("Carregando seus dados da nuvem...")
     Persistencia.carregar_csv(minha_colecao, "meu_album.csv")
-    Persistencia.carregar_csv(amigo_colecao, "amigo_album.csv") # O amigo também tem um save
+    Persistencia.carregar_csv(amigo_colecao, "amigo_album.csv")
     
     # Loop infinito do menu interativo
     while True:
@@ -70,7 +70,7 @@ def main():
                 meu_id = int(input("ID da SUA figurinha repetida que deseja dar: "))
                 amigo_id = int(input("ID da figurinha repetida do AMIGO que você quer: "))
                 
-                # Para testar isso, você precisa primeiro adicionar a figurinha no amigo_colecao no código ou no CSV
+             
                 hist_trocas.processar_troca(minha_colecao, meu_id, amigo_colecao, amigo_id)
             except ValueError:
                 print("Erro: Digite apenas números para os IDs.")

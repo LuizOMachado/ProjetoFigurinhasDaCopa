@@ -1,0 +1,13 @@
+id,nome,pais,posicao,raridade,tipo
+10,Messi,Argentina,Ataque,Lenda,oficial
+1,Alisson,Brasil,Goleiro,Comum,oficial
+2,Marquinhos,Brasil,Zagueiro,Comum,oficial
+3,Casemiro,Brasil,Meio-Campo,Extra,oficial
+4,Vinicius Jr,Brasil,Atacante,Lenda,oficial
+5,Mbappe,Franca,Atacante,Lenda,oficial
+6,Griezmann,Franca,Meio-Campo,Extra,oficial
+7,De Bruyne,Belgica,Meio-Campo,Extra,oficial
+8,Courtois,Belgica,Goleiro,Comum,oficial
+17,Bellingham,Inglaterra,Meio-Campo,Extra,oficial
+10,Messi,Argentina,Ataque,Lenda,repetida
+6,Griezmann,Franca,Meio-Campo,Extra,repetida

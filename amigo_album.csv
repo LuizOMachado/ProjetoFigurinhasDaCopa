@@ -1,0 +1,12 @@
+id,nome,pais,posicao,raridade,tipo
+10,Messi,Argentina,Ataque,Lenda,oficial
+9,Harry Kane,Inglaterra,Atacante,Extra,oficial
+17,Bellingham,Inglaterra,Meio-Campo,Extra,oficial
+11,Van Dijk,Holanda,Zagueiro,Comum,oficial
+12,Gakpo,Holanda,Atacante,Comum,oficial
+13,Modric,Croacia,Meio-Campo,Lenda,oficial
+14,Gvardiol,Croacia,Zagueiro,Comum,oficial
+16,Neuer,Alemanha,Goleiro,Lenda,oficial
+4,Vinicius Jr,Brasil,Atacante,Lenda,oficial
+10,Messi,Argentina,Ataque,Lenda,repetida
+16,Neuer,Alemanha,Goleiro,Lenda,repetida
