@@ -93,4 +93,20 @@ class Fila:
         self._fim.proximo = novo_nodo
         self._fim = novo_nodo
 
+    def dequeue(self) -> Figurinha:
+        """Remove e retorna a figurinha que está no início da fila."""
+        if self._inicio is None:
+            return None # Fila vazia
+            
+        figurinha_removida = self._inicio.figurinha
+        
+        # O início avança para o próximo nó (o antigo início fica sem referência e é apagado da memória)
+        self._inicio = self._inicio.proximo 
+        
+        # Se a fila ficou vazia após a remoção, o '_fim' também precisa ser zerado
+        if self._inicio is None:
+            self._fim = None
+            
+        return figurinha_removida
+
 
